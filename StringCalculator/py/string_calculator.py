@@ -1,2 +1,3 @@
 def add(numbers):
-	pass
+	if not numbers:
+		return 0
