@@ -13,6 +13,10 @@ class StringCalculatorTest(unittest.TestCase):
 		self.assertEqual(string_calculator.add('1,2'), 3, 'add("1,2") == 3')
 		self.assertEqual(string_calculator.add('5,3'), 8, 'add("5,3") == 8')
 
+	def test_add_unknown_amount_of_numbers(self):
+		self.assertEqual(string_calculator.add('1,3,5,8'), 17, 'add("1,3,5,8") == 17')
+		self.assertEqual(string_calculator.add('2,3,4,5,6'), 20, 'add("2,3,4,5,6") == 20')
+
 
 if __name__ == '__main__':
 	unittest.main()
