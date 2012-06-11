@@ -17,6 +17,10 @@ class StringCalculatorTest(unittest.TestCase):
 		self.assertEqual(string_calculator.add('1,3,5,8'), 17, 'add("1,3,5,8") == 17')
 		self.assertEqual(string_calculator.add('2,3,4,5,6'), 20, 'add("2,3,4,5,6") == 20')
 
+	def test_new_line_separator(self):
+		self.assertEqual(string_calculator.add('1\n2,3'), 6, 'add(1\\n2,3) == 6')
+		self.assertEqual(string_calculator.add('1\n2,3\n5'), 11, 'add(1\\n2,3\\n5) == 11')
+
 
 if __name__ == '__main__':
 	unittest.main()
