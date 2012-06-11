@@ -1,9 +1,4 @@
 def add(numbers):
-	if not numbers:
-		return 0
+	numbers_list = [int(x) for x in numbers.split(',') if x]
 
-	result = 0
-	for x in numbers.split(','):
-		result += int(x)
-
-	return result
+	return sum(numbers_list)
