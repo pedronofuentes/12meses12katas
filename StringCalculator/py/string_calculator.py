@@ -1,4 +1,5 @@
 def add(numbers):
-	numbers_list = [int(y) for x in numbers.split('\n') if x for y in x.split(',')]
+	if numbers.find('//') == 0:
+		return sum([int(x) for x in numbers[4:].split(numbers[2])])
 
-	return sum(numbers_list)
+	return sum([int(y) for x in numbers.split('\n') if x for y in x.split(',')])
