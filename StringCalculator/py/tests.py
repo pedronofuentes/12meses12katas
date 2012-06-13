@@ -26,9 +26,9 @@ class StringCalculatorTest(unittest.TestCase):
 		self.assertEqual(string_calculator.add('//:\n1:2:3'), 6, 'add("//:\\n1:2:3") == 6')
 
 	def test_negative_numbers(self):
-		self.assertRaisesRegexp(ValueError, 'Negative numbers are not allowed: d+[,d+]*', string_calculator.add, '-1,3,-4')
-		self.assertRaisesRegexp(ValueError, 'Negative numbers are not allowed: d+[,d+]*', string_calculator.add, '//;\n-2;3;-4;-6')
-		self.assertRaisesRegexp(ValueError, 'Negative numbers are not allowed: d+[,d+]*', string_calculator.add, '1\n-2,3,-4\n-6')
+		self.assertRaisesRegexp(ValueError, 'Negative numbers are not allowed: \-\d+[,\-\d+]*$', string_calculator.add, '-1,3,-4')
+		self.assertRaisesRegexp(ValueError, 'Negative numbers are not allowed: \-\d+[,\-\d+]*$', string_calculator.add, '//;\n-2;3;-4;-6')
+		self.assertRaisesRegexp(ValueError, 'Negative numbers are not allowed: \-\d+[,\-\d+]*$', string_calculator.add, '1\n-2,3,-4\n-6')
 
 if __name__ == '__main__':
 	unittest.main()
