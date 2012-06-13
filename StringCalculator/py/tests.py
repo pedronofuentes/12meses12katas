@@ -21,6 +21,10 @@ class StringCalculatorTest(unittest.TestCase):
 		self.assertEqual(string_calculator.add('1\n2,3'), 6, 'add(1\\n2,3) == 6')
 		self.assertEqual(string_calculator.add('1\n2,3\n5'), 11, 'add(1\\n2,3\\n5) == 11')
 
+	def test_custom_delimiters(self):
+		self.assertEqual(string_calculator.add('//;\n1;2'), 3, 'add("//;\\n1;2") == 3')
+		self.assertEqual(string_calculator.add('//:\n1:2:3'), 6, 'add("//:\\n1:2:3") == 6')
+
 
 if __name__ == '__main__':
 	unittest.main()
