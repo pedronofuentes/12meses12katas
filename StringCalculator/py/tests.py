@@ -30,5 +30,9 @@ class StringCalculatorTest(unittest.TestCase):
 		self.assertRaisesRegexp(ValueError, 'Negative numbers are not allowed: \-\d+[,\-\d+]*$', string_calculator.add, '//;\n-2;3;-4;-6')
 		self.assertRaisesRegexp(ValueError, 'Negative numbers are not allowed: \-\d+[,\-\d+]*$', string_calculator.add, '1\n-2,3,-4\n-6')
 
+	def test_bigger_than_1000_numbers(self):
+		self.assertEqual(string_calculator.add('1\n2,3,1001'), 6, 'add(1\\n2,3,1001) == 6')
+		self.assertEqual(string_calculator.add('//:\n1:2:3:2000'), 6, 'add("//:\\n1:2:3:2000") == 6')
+
 if __name__ == '__main__':
 	unittest.main()
