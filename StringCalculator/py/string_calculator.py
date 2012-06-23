@@ -5,8 +5,10 @@ def add(numbers):
 	else:
 		numbers_list = [int(y) for x in numbers.split('\n') if x for y in x.split(',')]
 
+	sum_list = [x for x in numbers_list if x <= 1000]
+
 	negative_numbers = [x for x in numbers_list if x < 0]
 	if negative_numbers:
 		raise ValueError('Negative numbers are not allowed: %s' % ','.join(['%i' % x for x in negative_numbers]))
 
-	return sum(numbers_list)
+	return sum(sum_list)
